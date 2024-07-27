@@ -1,7 +1,8 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'ShowHome'])->name('home');
+
+Route::get('/product_detail/{id}', [ProductController::class, 'productDetail'])->name('product_detail');
+
+Route::get('/account', [AuthController::class, 'account'])->name('account');
+// Route::group(['prefix' => 'client', 'as' => 'client.'], function() {
+//     Route::get('/',[HomeController::class,'index'])->name('home');
+// });
