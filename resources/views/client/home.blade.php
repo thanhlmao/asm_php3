@@ -164,7 +164,7 @@
                             </a>
                         </figure>
                         <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-                        <a href="product-detail-1.html">
+                        <a href="{{ route('product_detail',$value->id) }}">
                             <h3>Armor ACG React Terra</h3>
                         </a>
                         <div class="price_box">
